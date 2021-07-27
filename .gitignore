@@ -20,6 +20,8 @@ dist/
 *.jar
 *.zip
 
+.env
+
 
 # Maven
 target/

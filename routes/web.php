@@ -53,10 +53,10 @@ Route::get('unverified-user2',function(){
     return view('admin.component.admin_all_pendaftar_baru',compact('data_new_member'));
 });
 // Route::get('')
-Route::get('admin',[adminController::class,'index'])->name('admin');
+Route::get('admin',[adminController::class,'index'])->name('login');
 Route::get('admin-dashboard',function(){
     return view('admin.dashboard');
-})->name('admin-dashboard');
+})->middleware(['admin'])->name('admin-dashboard');
 
 Route::get('all_pengajar',[sdmController::class,'all_pengajar']);
 Route::get('admin_all_siswa',[sdmController::class,'all_siswa']);
@@ -153,6 +153,10 @@ Route::get('home', function () {
 });
 
 Route::get('/', function () {
-    return redirect()->route('admin');
+    return redirect()->route('login');
+});
+
+Route::get('login', function () {
+    return redirect()->route('login');
 });
 

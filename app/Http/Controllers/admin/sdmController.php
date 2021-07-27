@@ -22,13 +22,6 @@ class sdmController extends Controller
 
     public function index()
     {
-        // $data_pengajar = DB::table('tbluser')
-        // ->join('tbl_classteacher','tbluser.id_user','=','tbl_classteacher.id_teacher')
-        // ->select('tbluser.id','tbluser.UserName','tbluser.UserEmail','tbluser.jenis_kelamin','tbluser.alamat','tbluser.pendidikan','tbluser.universitas','tbluser.telp','tbluser.tempat_lahir','tbluser.UserType','tbl_classteacher.id_kursus')
-        // ->where('tbluser.UserType',0)
-        // ->orderBy('tbl_classteacher.id','DESC')
-        // ->get();
-
         $data_pengajar = DB::table('tbluser')
         ->where('UserType',0)
         ->get();

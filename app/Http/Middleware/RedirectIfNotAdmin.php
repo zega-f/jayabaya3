@@ -17,12 +17,9 @@ class RedirectIfNotAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Session::get('userlevel')!="admin") {
-            return redirect('home');
+        if (Session::get('login')==false) {
+            return redirect('login');
         }
         return $next($request);
-        // else{
-        //     
-        // }
     }
 }
