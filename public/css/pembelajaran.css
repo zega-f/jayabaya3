@@ -1,0 +1,211 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #D9D9D9; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC93C; 
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    /*font-weight: 300;*/
+    /*color: #999;*/
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+
+#sidebar {
+    padding:20px 0 20px 10px;
+    width: 400px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    /*background: #fff;*/
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -400px;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 400px);
+    padding-right: 20px;
+    padding-left: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /*background-color: orange;*/
+}
+
+#content.active {
+    width: 100%;
+}
+
+/*sticky navbar*/
+#flying-menu{
+    width: calc(100% - 400px);
+    /*padding-right: 20px;
+    padding-left: 20px;*/
+    /*margin: 20px;*/
+    /*background-color: orange;*/
+    z-index: 1;
+    position: fixed;
+    top: 20px;
+    right: 0;
+    height: 50px;
+}
+.navbar{
+    top: 20px;
+    position: fixed;
+    width: calc(100% - 440px);
+    /*opacity: 90%;*/
+    border-radius: 5px;
+}
+.navbar.active{
+    width: calc(100% - 40px);
+}
+
+#typing_field{
+    margin-top: 10px;
+    padding: 0;
+    /*width: calc(100% - 40px);*/
+    background-color: orange;
+    /*position: absolute;*/
+}
+
+.mess-out{
+    width: calc(100% - 50px);
+    height: auto;
+    padding: 10px;
+    float: right;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.mess-out-t{
+    width: calc(100% - 50px);
+    height: auto;
+    padding: 10px;
+    float: right;
+    background-color:red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.mess-in{
+    width: calc(100% - 50px);
+    height: auto;
+    padding: 10px;
+    float: left;
+    background-color: #A2D5F2;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.chat-capt{
+    font-size: 10px;
+    font-style: italic;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -400px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 400px);
+    }
+
+    .navbar.active{
+        width: 100%;
+    }
+    .navbar{
+        width: calc(100% - 40px);
+    }
+    /*#flying_menu.active{
+        width: calc(100% - 400px);
+    }*/
+    #sidebarCollapse span {
+        display: none;
+    }
+}
